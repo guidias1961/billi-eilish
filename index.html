@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BILLI EILISH - The Bad Guy of Mantle 🎤</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Billi Core Colors */
+            --main-orange: #FF5500;
+            --hot-orange: #FF6B00;
+            --pure-orange: #FF7700;
+            
+            /* Eilish Accents */
+            --neon-green: #39FF14;
+            --dark-green: #104a0b;
+            --bright-green: #5eff3d;
+
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --white: #ffffff;
+            
+            /* Modified Gradients to Mix Orange and Green */
+            --hero-gradient-1: #000000;
+            --hero-gradient-2: #1a1a1a;
+            
+            --logo-glow: 0 0 80px var(--neon-green), 0 0 120px var(--main-orange); 
+            --btn-glow: 0 0 35px var(--neon-green), 0 0 60px var(--main-orange); 
+            --vibrant-glow: var(--neon-green);
+            --orange-glow: var(--main-orange);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.4rem 5rem 1.4rem;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #1a2e19 0%, #000000 70%);
+        }
+
+        /* Stars Animation */
+        .stars { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+        .star {
+            position: absolute;
+            background: var(--neon-green);
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Typography & Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 6.3rem;
+            font-weight: 800;
+            color: var(--white);
+            /* Dual color shadow: Green + Orange */
+            text-shadow: 4px 4px 0 var(--black), 0 0 40px var(--neon-green), 0 0 80px var(--main-orange);
+            animation: billiFloat 3.5s ease-in-out infinite;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 0.7rem;
+            text-shadow: 0 0 20px var(--neon-green);
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--neon-green);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Main Image styling */
+        .hero-image-container {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .hero-main-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 20px;
+            border: 4px solid var(--neon-green);
+            box-shadow: 0 0 60px var(--neon-green), 0 0 100px var(--main-orange);
+            object-fit: cover;
+            animation: billiFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes billiFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Primary Button: Green Theme */
+        .btn-primary {
+            background: linear-gradient(90deg, var(--dark-green) 0%, var(--neon-green) 100%);
+            color: var(--black);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+        }
+        .btn-primary:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 60px var(--neon-green);
+            color: var(--black);
+        }
+
+        /* Secondary Button: Orange Theme (Legacy) */
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--main-orange);
+            color: var(--main-orange);
+            box-shadow: 0 0 20px rgba(255, 85, 0, 0.2);
+        }
+        .btn-secondary:hover {
+            background: var(--main-orange);
+            color: var(--white);
+            box-shadow: 0 0 50px var(--main-orange);
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTIONS COMMON --- */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 40px var(--neon-green);
+        }
+
+        /* --- TOKEN INFO (Contract) --- */
+        .token-info-box {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid var(--neon-green);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.15);
+            margin-bottom: 2rem;
+        }
+
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            word-break: break-all;
+            margin: 1.5rem 0;
+            color: var(--white);
+            background: rgba(0,0,0,0.5);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px dashed var(--main-orange);
+        }
+
+        /* --- ABOUT CARDS --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .about-card {
+            background: linear-gradient(135deg, #111 0%, #0a1f0a 100%);
+            border: 1px solid var(--neon-green);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.3);
+        }
+        .about-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .about-card h3 { color: var(--neon-green); margin-bottom: 0.5rem; }
+        .about-card p { color: #ccc; }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: #050505;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--neon-green);
+        }
+        
+        /* Music Note Decorations */
+        .music-note {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--neon-green);
+            opacity: 0.5;
+            animation: floatNote 5s linear infinite;
+        }
+        @keyframes floatNote {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .hero-main-img { width: 200px; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="stars" id="stars"></div>
+        
+        <div class="music-note" style="left: 10%; animation-delay: 0s;">🎵</div>
+        <div class="music-note" style="left: 80%; animation-delay: 2s;">🎶</div>
+        <div class="music-note" style="left: 40%; animation-delay: 4s;">♩</div>
+
+        <div class="hero-content">
+            <div class="hero-image-container">
+                <img src="billi_eilish_hero.png" alt="Billi Eilish Cat" class="hero-main-img">
+            </div>
+            
+            <h1 class="hero-title">BILLI EILISH</h1>
+            <p class="hero-subtitle">The Bad Guy on Mantle Network</p>
+            <p class="hero-tagline">"I'm the meow type. Make your wallet fat type."</p>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="copyToClipboard()">
+                    📋 Copy CA
+                </button>
+                <a href="#" class="btn btn-secondary">
+                    📊 DexScreener
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    🐦 Twitter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #0a0a0a;">
+        <div class="container">
+            <div class="token-info-box">
+                <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Bad Guy Contract 😈</h2>
+                <p style="color: #aaa; margin-bottom: 1rem;">Official Contract Address on Mantle</p>
+                
+                <div class="contract-address" id="ca-text">0x375450706cb79aB749EBB90001bDa10341dD82BC</div>
+                
+                <button class="btn btn-primary" onclick="copyToClipboard()" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">
+                    Click to Copy
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why So Serious?</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🎤</div>
+                    <h3>Chart Topper</h3>
+                    <p>Billi Eilish isn't just a mascot, it's a rockstar. Mixing the viral power of Billi with the edge of Eilish.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">💚</div>
+                    <h3>Slime Green Community</h3>
+                    <p>Powered by the Mantle community. No managers, just fans. We are the bad guys running the show.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">⛓️</div>
+                    <h3>Diamond Chains</h3>
+                    <p>Holding Billi Eilish is a lifestyle. Get your chains ready and hold until the world tour.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h3 style="color: var(--neon-green); font-family: 'Fredoka', sans-serif; font-size: 2rem;">BILLI EILISH</h3>
+        <p style="color: #666; margin-top: 1rem;">Meme token. For entertainment purposes. Duh.</p>
+        <p style="color: #444; margin-top: 2rem;">© 2025 Billi Eilish Token.</p>
+    </footer>
+
+    <script>
+        // Create Stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 80; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                
+                // Randomize color between Orange and Green for the stars
+                if (Math.random() > 0.5) {
+                    star.style.backgroundColor = 'var(--main-orange)';
+                    star.style.boxShadow = '0 0 10px var(--main-orange)';
+                }
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        // Copy to Clipboard
+        function copyToClipboard() {
+            const address = document.getElementById('ca-text').innerText;
+            navigator.clipboard.writeText(address).then(() => {
+                alert("Contract Copied! You're the bad guy now.");
+            });
+        }
+
+        // Simple scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.about-card').forEach((el) => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
